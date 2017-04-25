@@ -2,8 +2,10 @@ var NewUrl = React.createClass({
 	render(){
 		return (
 			<div> 
-				<input id='url' name='url' placeholder='Enter a new URL to parse' />
-				<button onClick={this.parseUrl}>Submit</button> 
+				<input id='url' name='url' placeholder='Paste a new URL to parse' />
+				<p className="small-text">Need http:// or https:// to work properly </p>
+				<button id="button" onClick={this.parseUrl}>Submit</button> 
+				<p className="not-loading">carregando</p>
 			</div>
 		) 
 	},

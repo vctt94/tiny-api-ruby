@@ -6,6 +6,7 @@ class Api::V1::ParseController < Api::V1::BaseController
 	def allUrls
 		respond_with SiteParsed.all
 	end
+	
 	def parseUrl
 
 		url = params["url"]
