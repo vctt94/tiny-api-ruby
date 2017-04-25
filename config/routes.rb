@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do 
     	post "/parse-url" => "parse#parseUrl"
- 		resources :site, only: [:index, :create, :destroy, :update] 
+ 		get  "/all-urls"  => "parse#allUrls" 
     end
   end
 end

@@ -6,7 +6,7 @@ var AllUrls = React.createClass({
 		} 
 	},
 	componentDidMount() {
-        $.getJSON('/api/v1/site.json', (response) => { 
+        $.getJSON('/api/v1/all-urls.json', (response) => { 
 			this.setState({ sites: response }) 
 		}); 
     },
@@ -16,7 +16,7 @@ var AllUrls = React.createClass({
 			return (
 				<a href="#" key={site.id} >
 					<div className="item-square">
-							<p>Url: {site.url}</p>
+							<p >Url: {site.url}</p>
 							<p>H1: {JSON.parse(site.h1)}</p>
 							<p>H2: {JSON.parse(site.h2)}</p>
 							<p>H3: {JSON.parse(site.h3)}</p>

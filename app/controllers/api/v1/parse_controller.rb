@@ -3,6 +3,9 @@ require 'json'
 
 class Api::V1::ParseController < Api::V1::BaseController
 
+	def allUrls
+		respond_with SiteParsed.all
+	end
 	def parseUrl
 
 		url = params["url"]
@@ -28,7 +31,8 @@ class Api::V1::ParseController < Api::V1::BaseController
 			:h3  => stringJsonH3,
 			:a   => stringJsonLinks
 		)
-		
+
 		render :json => {h1:h1,h2:h2,h3:h3, a: links}
 	end
+
 end
