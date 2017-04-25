@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  url: 
+  a: 
+  h1: MyString
+  json: MyString
+  h2: 
+  h3: 
+
+two:
+  url: 
+  a: 
+  h1: MyString
+  json: MyString
+  h2: 
+  h3: 

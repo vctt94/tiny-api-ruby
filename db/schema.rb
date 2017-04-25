@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170424154054) do
+ActiveRecord::Schema.define(version: 20170425053744) do
+
+  create_table "site_parseds", force: :cascade do |t|
+    t.text     "url"
+    t.text     "a"
+    t.text     "h1"
+    t.text     "h2"
+    t.text     "h3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "sites", force: :cascade do |t|
     t.string   "title"

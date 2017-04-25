@@ -6,7 +6,6 @@ var AllUrls = React.createClass({
 		} 
 	},
 	componentDidMount() {
-        console.log('Component mounted');
         $.getJSON('/api/v1/site.json', (response) => { 
 			this.setState({ sites: response }) 
 		}); 
@@ -16,9 +15,12 @@ var AllUrls = React.createClass({
 		var sites = this.state.sites.map((site) => { 
 			return (
 				<a href="#" key={site.id} >
-					<div className="item-square" onClick={(evt) =>this.parseUrl('www.google.com.br',evt)}>
-							<p>title: {site.title}</p>
+					<div className="item-square">
 							<p>Url: {site.url}</p>
+							<p>H1: {JSON.parse(site.h1)}</p>
+							<p>H2: {JSON.parse(site.h2)}</p>
+							<p>H3: {JSON.parse(site.h3)}</p>
+							<p>Links: {JSON.parse(site.a)}</p>
 					</div>
 				</a>
 
@@ -36,16 +38,5 @@ var AllUrls = React.createClass({
 		)
 
 	},
-	parseUrl(url,event){
-		event.preventDefault()
-		$.ajax({
-			url: '/api/v1/parse-url', 
-			type: 'POST',
-			data: { url: url },
-			success: (response) => { 
-				console.log('it worked!', response); 
-			} 
-		})
-
-	}
+	
 });
